@@ -1,0 +1,133 @@
+Question 1
+app.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'MOBILE SHOP';
+  productTitle:string="SAMSUNG";
+  productPrice:number=12000.00;
+  stock:number=5;
+  imageLocation:string='../assets/mobile.jpg';
+}
+
+app.component.html
+<div class="panel panel-primary" width="50px">
+<div class="panel-body">
+  <h1 style="text-align: center;">{{title}}</h1>
+<div class=”card” style="margin-left: 600px;margin-top: 50px">
+  <img class=”card-img-top”/>
+  <img [src]="imageLocation" width="30%" height="30%" alt="image is loading..." >
+  <div class=”card-body”> 
+    <h4 style="font-size:25px;margin-left: 20px;">
+      Category: {{productTitle}}<br/>
+      Price: {{productPrice}}<br/>
+      Stock: {{stock}}<br/>
+    </h4>
+  </div>
+  <div>
+    <button type="button" style="background-color:green ;color:white;margin-left: 80px;">ADD TO CART</button>
+  </div>
+</div>
+</div>
+</div>
+
+
+Question2
+usa.component.ts
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-usa',
+  templateUrl: './usa.component.html',
+  styleUrls: ['./usa.component.css']
+})
+export class USAComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+
+usa.component.html
+<div class="class1">
+  <h3 style="text-align: center;">United State</h3>
+  <div><app-new></app-new></div>
+ <div><app-washington></app-washington></div>
+ </div>
+ 
+ usa.component.css
+ .class1{
+    background-color: black;color: white;
+    width:800px;
+    height:500px;
+    margin-left: 350px;
+}
+
+new.component.ts
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-new',
+  templateUrl: './new.component.html',
+  styleUrls: ['./new.component.css']
+})
+export class NewComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+
+new.component.html
+<div class="class2">
+<h3>NEW YORK</h3>
+</div>
+
+new.component.css
+div {
+    background-color:white;color:black;
+    width:200px;
+    height:100px;
+    margin-left: 60px; 
+    margin-top: 50px;
+}
+
+washington.component.ts
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-washington',
+  templateUrl: './washington.component.html',
+  styleUrls: ['./washington.component.css']
+})
+export class WashingtonComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+washington.component.html
+<div class="class2">
+<h3>WASHINGTON</h3>
+</div>
+
+washington.component.css
+div {
+    background-color:white;color:black;
+    width:200px;
+    height:100px;
+    margin-left: 420px;
+    
+}
+
